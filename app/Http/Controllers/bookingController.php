@@ -23,8 +23,6 @@ class bookingController extends Controller
         $dm1 = cal_days_in_month(CAL_GREGORIAN,$date_now[1],$date_now[0]);
         $date_now[1] == 12 ? $dm2 = cal_days_in_month(CAL_GREGORIAN,1,$date_now[0]+1) : $dm2 = cal_days_in_month(CAL_GREGORIAN,$date_now[1]+1,$date_now[0]);
             
-        
-        
         return view('room',['dm1'=>$dm1,'dm2'=>$dm2,'m'=>$date_now[1],'y'=>$date_now[0],'rm'=>$rm]);
     }
     public function seeBook($id,$tgl)

@@ -46,7 +46,7 @@
 
                                             <tr>
                                                 <td>{{ $i . '-' . $m . '-' . $y }}</td>
-                                                <td>{{ $v = App\Models\Booking::where('tanggal', date_create($i . '-' . $m . '-' . $y))->get()->count() }}/{{ $rm->limit }}
+                                                <td>{{ $v = App\Models\Booking::where(['room_id'=>$rm->id,'tanggal'=> date_create($i . '-' . $m . '-' . $y)])->get()->count() }}/{{ $rm->limit }}
                                                 </td>
                                                 <td>
                                                     @if ($v == $rm->limit)
