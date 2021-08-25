@@ -14,8 +14,8 @@ class bookingController extends Controller
     public function index()
     {
         $rm = Room::all();
-        // return view('dashboard',['rm'=>$rm]);
-        return redirect('/detail/3');
+        return view('dashboard',['rm'=>$rm]);
+        // return redirect('/detail/3');
     }
 
     public function detail(Request $request , $id)
@@ -61,14 +61,14 @@ class bookingController extends Controller
                 'token'=>Auth::user()->token - 1
             ]
             );
-        return redirect()->back()->with(['status'=>'You has been booked !']);
+        return redirect()->route('seeBook',['id'=>$request->id,'tgl'=>Crypt::encrypt($request->tanggal)])->with(['status'=>'You has been booked !']);
 
     }
 
     public function add_room()
     {
-        // return view('add_room');
-        return redirect('/detail/3');
+        return view('add_room');
+        // return redirect('/detail/3');
 
     }
 
