@@ -56,4 +56,19 @@ class bookingController extends Controller
         return redirect()->back()->with(['status'=>'You has been booked !']);
 
     }
+
+    public function add_room()
+    {
+        return view('add_room');
+    }
+
+    public function roomPost(Request $request)
+    {
+        Room::create([
+            'name'=>$request->name,
+            'limit'=>$request->limit,
+        ]);
+        return redirect()->back()->with(['status'=>'Room has been created !']);
+
+    }
 }
