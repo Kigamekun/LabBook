@@ -5,9 +5,6 @@
     <br>
     <br>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-
                 <center><h1>Room</h1></center>
 <br>
 @foreach ($rm as $item)
@@ -32,6 +29,5 @@
 @endforeach
 
 
-        </div>
-    </div>
+      
 </x-app-layout>

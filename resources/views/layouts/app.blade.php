@@ -41,16 +41,24 @@
                 </header>
             @endif
 
-            @if (Session::has('status'))
-   
-
-    <div class="alert alert-success" role="alert">
-        {{ Session::get('status') }}
-    </div>
-@endif
+         
             <!-- Page Content -->
             <main>
+
+                <div class="py-12">
+                    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                        @if (Session::has('status'))
+   
+
+                        <div class="alert alert-success" role="alert">
+                            {{ Session::get('status') }}
+                        </div>
+                    @endif
+                
                 {{ $slot }}
+
+                    </div>
+                </div>
             </main>
         </div>
 
