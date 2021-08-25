@@ -84,6 +84,40 @@
                                 @endif
 
                                 @endfor
+                                @for ($i = 1; $i < 10; $i++)
+                               
+                                <tr>
+                                    <td>{{ $i . '-' . $bln . '-' . $thn }}</td>
+                                    <td>{{ $v = App\Models\Booking::where(['room_id' => $rm->id, 'tanggal' => date_create($i . '-' . $bln . '-' . $thn)])->get()->count() }}/{{ $rm->limit }}
+                                    </td>
+                                    <td>
+                                        @if ($v == $rm->limit)
+                                            <span class="badge badge-danger">Full</span>
+                                    </td>
+
+                                @else
+                                    <span class="badge badge-success">Available</span></td>
+
+                            @endif
+                            <td></td>
+
+                            @if ($v == $rm->limit)
+                                <td><button type="button" class="btn btn-warning" disabled>Full </button>
+                                </td>
+                            @else
+                                <td><a href="{{ route('booking', ['id' => $rm->id, 'tgl' => $i . '-' . $bln . '-' . $thn]) }}"
+                                        class="btn btn-info">Booking </a></td>
+
+                            @endif
+                            <td><a href="{{ route('seeBook', ['id' => $rm->id, 'tgl' => $i . '-' . $bln . '-' . $thn]) }} "
+                                    class="btn btn-primary">See bookers </a></td>
+
+                            </tr>
+
+
+
+
+                                @endfor
 
 
                             </tbody>

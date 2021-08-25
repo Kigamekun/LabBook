@@ -21,9 +21,16 @@ class bookingController extends Controller
         $rm = Room::where('id',$id)->first();
         $date_now = explode(' ',Carbon::now()->format('Y m d'));
         $dm1 = cal_days_in_month(CAL_GREGORIAN,$date_now[1],$date_now[0]);
-        $date_now[1] == 12 ? $dm2 = cal_days_in_month(CAL_GREGORIAN,1,$date_now[0]+1) : $dm2 = cal_days_in_month(CAL_GREGORIAN,$date_now[1]+1,$date_now[0]);
+        // $date_now[1] == 12 ? $dm2 = cal_days_in_month(CAL_GREGORIAN,1,$date_now[0]+1) : $dm2 = cal_days_in_month(CAL_GREGORIAN,$date_now[1]+1,$date_now[0]);
+        if ($date_now[1] == 12) {
+            $bln = 1;
+            $thn = $date_now[0]+1;
+        } else {
+            $bln = $date_now[1]+1;
+            $thn = $date_now[0];
+        }
             
-        return view('room',['dm1'=>$dm1,'dm2'=>$dm2,'d'=>$date_now[2],'m'=>$date_now[1],'y'=>$date_now[0],'rm'=>$rm]);
+        return view('room',['dm1'=>$dm1,'bln'=>$bln,'thn'=>$thn,'d'=>$date_now[2],'m'=>$date_now[1],'y'=>$date_now[0],'rm'=>$rm]);
     }
     public function seeBook($id,$tgl)
     {
