@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use App\Models\Room;
 use App\Models\Booking;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 class bookingController extends Controller
 {
     public function index()
@@ -52,7 +53,11 @@ class bookingController extends Controller
             'tanggal'=>date_create($request->tanggal),
             'room_id'=>$request->id
         ]);
-
+        User::where('id', Auth::id())->update(
+            [
+                'token'=>Auth::user()->token - 1
+            ]
+            );
         return redirect()->back()->with(['status'=>'You has been booked !']);
 
     }

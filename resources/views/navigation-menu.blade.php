@@ -16,6 +16,23 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                 </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('add_room') }}" :active="request()->routeIs('add_room')">
+                        {{ __('Add Room') }}
+                    </x-jet-nav-link>
+                </div>
+
+                  <!-- Navigation Links -->
+                  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link >
+                       Your Remaining Token : @if (Auth::user()->token == 0)
+                           <span style="color: red">{{Auth::user()->token}}</span>
+                       @else
+                           <span style="color: rgb(12, 184, 12)">{{Auth::user()->token}}</span>
+                       @endif
+                    </x-jet-nav-link>
+                </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -142,6 +159,16 @@
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
         </div>
+      
+            <div class="pt-2 pb-3 space-y-1">
+                <x-jet-responsive-nav-link >
+                    Your Remaining Token is  : @if (Auth::user()->token == 0)
+                        <span style="color: red"> {{Auth::user()->token}}</span>
+                        @else
+                        <span style="color: rgb(12, 184, 12)"> {{Auth::user()->token}}</span>
+                    @endif
+                </x-jet-responsive-nav-link>
+            </div>
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
