@@ -8,6 +8,7 @@ use App\Models\Room;
 use App\Models\Booking;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Facades\Crypt;
 class bookingController extends Controller
 {
     public function index()
@@ -30,21 +31,22 @@ class bookingController extends Controller
             $bln = $date_now[1]+1;
             $thn = $date_now[0];
         }
-            
         return view('room',['dm1'=>$dm1,'bln'=>$bln,'thn'=>$thn,'d'=>$date_now[2],'m'=>$date_now[1],'y'=>$date_now[0],'rm'=>$rm]);
     }
     public function seeBook($id,$tgl)
     {
+        $tgl = Crypt::decrypt($tgl);
+      
         $bookers = Booking::where(['room_id'=>$id,'tanggal'=>date_create($tgl)])->get();
-        // dd($bookers);
         return view('bookers',['bk'=>$bookers]);
     }
-
     public function booking($id,$tgl)
     {
+       
+            $tgl = Crypt::decrypt($tgl);
+      
         return view('booking',['rm'=>$id,'tgl'=>$tgl]);
     }
-
     public function bookingPost(Request $request)
     {
         // dd($request->id);
