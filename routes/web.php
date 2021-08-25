@@ -15,7 +15,7 @@ use App\Http\Controllers\bookingController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('ban');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [bookingController::class,'index'])->name('dashboard');

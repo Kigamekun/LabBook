@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+        <img src="https://pjj.smkn4bogor.sch.id/pluginfile.php/1/theme_klass/logo/1628215534/70.png" alt="" style="width: 150px; height: 150px;">
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
