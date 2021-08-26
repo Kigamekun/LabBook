@@ -1,5 +1,4 @@
 <!DOCTYPE HTML>
-<<<<<<< HEAD
 <!--
 	Dimension by HTML5 UP
 	html5up.net | @ajlkn
@@ -123,8 +122,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 								<section>
 									<h3 class="major">Lists</h3>
-=======
->>>>>>> 01effcba73e2a1421dd2a13645d6adb1c595ec23
 
 <html>
 
