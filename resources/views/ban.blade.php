@@ -1,5 +1,5 @@
-
 <!DOCTYPE HTML>
+<<<<<<< HEAD
 <!--
 	Dimension by HTML5 UP
 	html5up.net | @ajlkn
@@ -123,234 +123,77 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 								<section>
 									<h3 class="major">Lists</h3>
+=======
+>>>>>>> 01effcba73e2a1421dd2a13645d6adb1c595ec23
 
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
+<html>
 
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
+<head>
+    <title>PLab</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{{ url('/Homes/') }}/assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="{{ url('/Homes/') }}/assets/css/noscript.css" />
+    </noscript>
+</head>
 
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
+<body class="is-preload">
 
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
+        <!-- Header -->
+        <header id="header">
+            <div>
+                <img src="https://pjj.smkn4bogor.sch.id/pluginfile.php/1/theme_klass/logo/1628215534/70.png">
+            </div>
+            <div class="content">
+                <div class="inner">
+                    <h1>PEMINJAMAN LAB RPL</h1>
 
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
+                    <p>Ini Merupakan Sebuah Website untuk Melakukan Peminjaman Laboratorium RPL SMKN4 Bogor</p>
+                    @if (is_null(Auth::id()))
+					<p><strong style="color: red;">SILAHKAN REGISTRASI TERLEBIH DAHULU</strong></p>
+					@else
+					<p><strong style="color: red;">KE DASHBOARD COK</strong></p>
+					@endif
+					
+					
+                </div>
+            </div>
+            <nav>
+				<ul>
+				@if (is_null(Auth::id()))
 
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
+                    <li><a href="{{ url('/') }}/login">LOGIN</a></li>
+                    <li><a href="{{ url('/') }}/register"><strong>REGISTER</strong></a></li>
+                    <!--<li><a href="#elements">Elements</a></li>-->
+					@else 
+					<li><a href="{{ url('/') }}/login">DASHBOARD</a></li>
+					@endif
+                </ul>
+            </nav>
+        </header>
 
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
+     
+        <!-- Footer -->
+        <footer id="footer">
+            <p>DESIGN BY SQUAD CODING <a href="https://chat.whatsapp.com/DmS0GNDsMzP1AfE98q8hRl" style="color: orange;"> GABUNG YUK!!!</a></p>
+        </footer>
 
-							</article>
+    </div>
 
-					</div>
+    <!-- BG -->
+    <div id="bg"></div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<p>DESIGN BY SQUAD CODING <a href="https://chat.whatsapp.com/DmS0GNDsMzP1AfE98q8hRl"><button style="color: blue;">GABUNG YUK!!!</button></a></p>
-					</footer>
+    <!-- Scripts -->
+    <script src="{{ url('/Homes/') }}/assets/js/jquery.min.js"></script>
+    <script src="{{ url('/Homes/') }}/assets/js/browser.min.js"></script>
+    <script src="{{ url('/Homes/') }}/assets/js/breakpoints.min.js"></script>
+    <script src="{{ url('/Homes/') }}/assets/js/util.js"></script>
+    <script src="{{ url('/Homes/') }}/assets/js/main.js"></script>
 
-			</div>
+</body>
 
-		<!-- BG -->
-			<div id="bg"></div>
-
-		<!-- Scripts -->
-			<script src="{{url('/Homes/')}}/assets/js/jquery.min.js"></script>
-			<script src="{{url('/Homes/')}}/assets/js/browser.min.js"></script>
-			<script src="{{url('/Homes/')}}/assets/js/breakpoints.min.js"></script>
-			<script src="{{url('/Homes/')}}/assets/js/util.js"></script>
-			<script src="{{url('/Homes/')}}/assets/js/main.js"></script>
-
-	</body>
 </html>

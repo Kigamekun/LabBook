@@ -19,30 +19,23 @@
         <form method="POST" action="{{ route('bookingPost') }}">
             @csrf
 
+            <input type="hidden" name="tanggal" class="form-control" value="{{$tgl}}">
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Tanggal</span>
                     </div>
-                    <input type="text" name="tanggal" class="form-control" value="{{$tgl}}">
+                    <input type="text" class="form-control" value="  {{$tgl}}" disabled>
                 </div>
             </div>
-
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">Room</span>
-                    </div>
-                    <input type="text" name="id"  class="form-control" value="{{$rm}}">
-                </div>
-            </div>
+            <input type="hidden" name="id"  class="form-control" value="{{$rm}}">
 <center>
-            <button class="w-80 btn btn-outline-success" type="submit">Booking</button>
+            <button style="width: 100%" class=" btn btn-outline-success" type="submit">Booking</button>
         </center>
             </form>
            
         @else
-            <center><h1>Sorry for you the booking has not available</h1></center>
+            <center><h1>You already booked on this date, so you can't book again</h1></center>
         @endif       
 
              

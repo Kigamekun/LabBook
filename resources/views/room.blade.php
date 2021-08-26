@@ -69,11 +69,11 @@
                                         <td><button type="button" class="btn btn-warning" disabled>Full </button>
                                         </td>
                                     @else
-                                        <td><a href="{{ route('booking', ['id' => $rm->id, 'tgl' => $i . '-' . $m . '-' . $y]) }}"
+                                        <td><a href="{{ route('booking', ['id' => $rm->id, 'tgl' => Illuminate\Support\Facades\Crypt::encrypt($i . '-' . $m . '-' . $y)]) }}"
                                                 class="btn btn-info">Booking </a></td>
 
                                     @endif
-                                    <td><a href="{{ route('seeBook', ['id' => $rm->id, 'tgl' => $i . '-' . $m . '-' . $y]) }} "
+                                    <td><a href="{{ route('seeBook', ['id' => $rm->id, 'tgl' => Illuminate\Support\Facades\Crypt::encrypt($i . '-' . $m . '-' . $y)]) }} "
                                             class="btn btn-primary">See bookers </a></td>
 
                                     </tr>
@@ -105,11 +105,11 @@
                                 <td><button type="button" class="btn btn-warning" disabled>Full </button>
                                 </td>
                             @else
-                                <td><a href="{{ route('booking', ['id' => $rm->id, 'tgl' => $i . '-' . $bln . '-' . $thn]) }}"
+                                <td><a href="{{ route('booking', ['id' => $rm->id, 'tgl' => Illuminate\Support\Facades\Crypt::encrypt($i . '-' . $bln . '-' . $thn)]) }}"
                                         class="btn btn-info">Booking </a></td>
 
                             @endif
-                            <td><a href="{{ route('seeBook', ['id' => $rm->id, 'tgl' => $i . '-' . $bln . '-' . $thn]) }} "
+                            <td><a href="{{ route('seeBook', ['id' => $rm->id, 'tgl' => Illuminate\Support\Facades\Crypt::encrypt($i . '-' . $bln . '-' . $thn)]) }} "
                                     class="btn btn-primary">See bookers </a></td>
 
                             </tr>
