@@ -39,9 +39,9 @@
                                 <tr>
                                     <th scope="col">tanggal</th>
                                     <th scope="col">Booked</th>
-                                    <th scope="col">Status</th>
+                                    <th scope="col">Booking</th>
                                     <th scope="col"></th>
-                                    <th scope="col">Booking !</th>
+                                    <th scope="col">Status !</th>
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
@@ -52,20 +52,17 @@
                                     @if ($i >= $d)
                                         <tr>
                                             <td>{{ $i . '-' . $m . '-' . $y }}</td>
-                                            <td>{{ $v = App\Models\Booking::where(['room_id' => $rm->id, 'tanggal' => date_create($i . '-' . $m . '-' . $y)])->get()->count() }}/{{ $rm->limit }}
-                                            </td>
-                                            <td>
-                                                @if ($v == $rm->limit)
-                                                    <span class="badge badge-danger">Full</span>
-                                            </td>
+                                            <td>{{ $v = App\Models\Booking::where(['room_id' => $rm->id, 'tanggal' => date_create($i . '-' . $m . '-' . $y)])->get()->count() }}/{{ $rm->limit }} </td>
+                                         
 
-                                        @else
-                                            <span class="badge badge-success">Available</span></td>
 
-                                    @endif
-                                    <td></td>
 
-                                    @if ($v == $rm->limit)
+                                            @if(date('D', strtotime( $y . '-' . $m . '-' . $i)) == "Sun" || date('D', strtotime( $y . '-' . $m . '-' . $i)) == "Sat")
+                                            <td><button type="button" class="btn btn-danger" disabled>Tidak Tersedia </button>
+                                        </td>
+
+
+                                            @elseif ($v == $rm->limit)
                                         <td><button type="button" class="btn btn-warning" disabled>Full </button>
                                         </td>
                                     @else
@@ -73,9 +70,38 @@
                                                 class="btn btn-info">Booking </a></td>
 
                                     @endif
-                                    <td><a href="{{ route('seeBook', ['id' => $rm->id, 'tgl' => Illuminate\Support\Facades\Crypt::encrypt($i . '-' . $m . '-' . $y)]) }} "
+
+
+
+
+                                    <td></td>
+
+                                
+
+
+                                    <td>
+                                    @if(date('D', strtotime( $y . '-' . $m . '-' . $i)) == "Sun" || date('D', strtotime( $y . '-' . $m . '-' . $i)) == "Sat")
+                                    <span class="badge badge-danger">Tidak tersedia</span></td>
+                                                @elseif ($v == $rm->limit)
+                                                    <span class="badge badge-danger">Full</span></td>
+
+                                        @else
+                                            <span class="badge badge-success">Available</span></td>
+
+                                    @endif
+
+
+                                    @if(date('D', strtotime( $y . '-' . $m . '-' . $i)) == "Sun" || date('D', strtotime( $y . '-' . $m . '-' . $i)) == "Sat")
+                               
+
+
+                                            <td><button 
+                                            class="btn btn-danger" disabled>Tidak tersedia</button></td>
+                                            @else 
+                                            <td><a href="{{ route('seeBook', ['id' => $rm->id, 'tgl' => Illuminate\Support\Facades\Crypt::encrypt($i . '-' . $m . '-' . $y)]) }} "
                                             class="btn btn-primary">See bookers </a></td>
 
+                                            @endif
                                     </tr>
 
 
@@ -90,18 +116,11 @@
                                     <td>{{ $i . '-' . $bln . '-' . $thn }}</td>
                                     <td>{{ $v = App\Models\Booking::where(['room_id' => $rm->id, 'tanggal' => date_create($i . '-' . $bln . '-' . $thn)])->get()->count() }}/{{ $rm->limit }}
                                     </td>
-                                    <td>
-                                        @if ($v == $rm->limit)
-                                            <span class="badge badge-danger">Full</span>
-                                    </td>
-
-                                @else
-                                    <span class="badge badge-success">Available</span></td>
-
-                            @endif
-                            <td></td>
-
-                            @if ($v == $rm->limit)
+                                  
+                                    @if(date('D', strtotime( $thn . '-' . $bln . '-' . $i)) == "Sun" || date('D', strtotime( $thn . '-' . $bln . '-' . $i)) == "Sat")
+                                    <td><button type="button" class="btn btn-danger" disabled>Tidak tersedia </button>
+                                </td>
+                            @elseif ($v == $rm->limit)
                                 <td><button type="button" class="btn btn-warning" disabled>Full </button>
                                 </td>
                             @else
@@ -109,12 +128,44 @@
                                         class="btn btn-info">Booking </a></td>
 
                             @endif
+
+                            <td></td>
+
+
+
+
+                            <td>
+                            @if(date('D', strtotime( $thn . '-' . $bln . '-' . $i)) == "Sun" || date('D', strtotime( $thn . '-' . $bln . '-' . $i)) == "Sat")
+                            <span class="badge badge-danger">Tidak tersedia</span>
+                                    </td>
+                            
+                            @elseif ($v == $rm->limit)
+                                            <span class="badge badge-danger">Full</span>
+                                    </td>
+
+                                @else
+                                    <span class="badge badge-success">Available</span></td>
+
+                            @endif
+
+
+
+                            @if(date('D', strtotime( $thn . '-' . $bln . '-' . $i)) == "Sun" || date('D', strtotime( $thn . '-' . $bln . '-' . $i)) == "Sat")
+
+
+                                    <td><button
+                                    class="btn btn-danger">Tidak tersedia </button></td>
+
+                            @else
+                          
+                          
                             <td><a href="{{ route('seeBook', ['id' => $rm->id, 'tgl' => Illuminate\Support\Facades\Crypt::encrypt($i . '-' . $bln . '-' . $thn)]) }} "
                                     class="btn btn-primary">See bookers </a></td>
 
+                            @endif
+
+
                             </tr>
-
-
 
 
                                 @endfor

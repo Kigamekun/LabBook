@@ -17,11 +17,11 @@
                     </x-jet-nav-link>
                 </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <!-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('add_room') }}" :active="request()->routeIs('add_room')">
                         {{ __('Add Room') }}
                     </x-jet-nav-link>
-                </div>
+                </div> -->
 
                   <!-- Navigation Links -->
                   <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
