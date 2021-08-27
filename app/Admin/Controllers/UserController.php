@@ -33,15 +33,15 @@ class UserController extends AdminController
         $table->column('nis', __('Nis'));
         $table->column('kelas', __('Kelas'));
         $table->column('email', __('Email'));
-        $table->column('email_verified_at', __('Email verified at'));
-        $table->column('password', __('Password'));
-        $table->column('two_factor_secret', __('Two factor secret'));
-        $table->column('two_factor_recovery_codes', __('Two factor recovery codes'));
-        $table->column('remember_token', __('Remember token'));
-        $table->column('current_team_id', __('Current team id'));
-        $table->column('profile_photo_path', __('Profile photo path'));
-        $table->column('created_at', __('Created at'));
-        $table->column('updated_at', __('Updated at'));
+        // $table->column('email_verified_at', __('Email verified at'));
+        // $table->column('password', __('Password'));
+        // $table->column('two_factor_secret', __('Two factor secret'));
+        // $table->column('two_factor_recovery_codes', __('Two factor recovery codes'));
+        // $table->column('remember_token', __('Remember token'));
+        // $table->column('current_team_id', __('Current team id'));
+        // $table->column('profile_photo_path', __('Profile photo path'));
+        // $table->column('created_at', __('Created at'));
+        // $table->column('updated_at', __('Updated at'));
 
         return $table;
     }
