@@ -29,6 +29,9 @@ class UserController extends AdminController
         $table->column('id', __('Id'));
         $table->column('name', __('Name'));
         $table->column('token', __('Token'));
+        $table->column('role', __('Role'));
+        $table->column('nis', __('Nis'));
+        $table->column('kelas', __('Kelas'));
         $table->column('email', __('Email'));
         $table->column('email_verified_at', __('Email verified at'));
         $table->column('password', __('Password'));
@@ -56,6 +59,9 @@ class UserController extends AdminController
         $show->field('id', __('Id'));
         $show->field('name', __('Name'));
         $show->field('token', __('Token'));
+        $show->field('role', __('Role'));
+        $show->field('nis', __('Nis'));
+        $show->field('kelas', __('Kelas'));
         $show->field('email', __('Email'));
         $show->field('email_verified_at', __('Email verified at'));
         $show->field('password', __('Password'));
@@ -81,6 +87,9 @@ class UserController extends AdminController
 
         $form->text('name', __('Name'));
         $form->number('token', __('Token'))->default(3);
+        $form->number('role', __('Role'));
+        $form->text('nis', __('Nis'));
+        $form->text('kelas', __('Kelas'));
         $form->email('email', __('Email'));
         $form->datetime('email_verified_at', __('Email verified at'))->default(date('Y-m-d H:i:s'));
         $form->password('password', __('Password'));
