@@ -154,7 +154,7 @@
 
 
                                     <td><button
-                                    class="btn btn-danger">Tidak tersedia </button></td>
+                                    class="btn btn-danger" disabled>Tidak tersedia </button></td>
 
                             @else
                           
