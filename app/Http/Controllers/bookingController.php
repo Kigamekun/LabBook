@@ -9,6 +9,8 @@ use App\Models\Booking;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\DB;
+
 class bookingController extends Controller
 {
     public function index()
@@ -37,21 +39,27 @@ class bookingController extends Controller
     public function seeBook($id,$tgl)
     {
         $tgl = Crypt::decrypt($tgl);
-      
+
         $bookers = Booking::where(['room_id'=>$id,'tanggal'=>date_create($tgl)])->get();
         return view('bookers',['bk'=>$bookers]);
     }
     public function booking($id,$tgl)
     {
-       
+
             $tgl = Crypt::decrypt($tgl);
-      
+
         return view('booking',['rm'=>$id,'tgl'=>$tgl]);
     }
     public function bookingPost(Request $request)
     {
-        // dd($request->id);
+
+        $users = DB::table('users')
+                ->where('id', '=', Auth::id())->first();
+                // dd($users);
         booking::create([
+            'name'=>$users->name,
+            'nis'=>$users->nis,
+            'kelas'=>$users->kelas,
             'user_id'=>Auth::id(),
             'tanggal'=>date_create($request->tanggal),
             'room_id'=>$request->id
