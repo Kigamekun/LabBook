@@ -53,7 +53,7 @@
      
         <!-- Footer -->
         <footer id="footer">
-            <p>DESIGN BY SQUAD CODING <a href="https://chat.whatsapp.com/DmS0GNDsMzP1AfE98q8hRl" style="color: orange;"> GABUNG YUK!!!</a></p>
+            <p>SYSTEM BY KIGA & DESIGN BY SQUAD CODING <a href="https://chat.whatsapp.com/DmS0GNDsMzP1AfE98q8hRl" style="color: orange;"> GABUNG YUK!!!</a></p>
         </footer>
 
     </div>
