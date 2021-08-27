@@ -27,10 +27,13 @@
             <div class="mt-4">
                 <x-jet-label for="kelas" value="{{ __('Kelas') }}" />
                 <select name="kelas" class="block mt-1 w-full form-control" id="kelas" required>
-                    
-                    <option value="XRPL1">XRPL1</option>
-                    <option value="XRPL2">XRPL2</option>
-                    
+                     
+                    <option value="XRPL1">X RPL1</option>
+                    <option value="XRPL2">X RPL2</option>
+                    <option value="XI RPL1">XI RPL1</option>
+                    <option value="XI RPL2">XI RPL2</option>
+		    <option value="XII RPL1">XII RPL1</option>
+                    <option value="XII RPL2">XII RPL2</option>
 
                 </select>
             </div>

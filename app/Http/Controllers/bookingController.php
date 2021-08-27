@@ -15,7 +15,7 @@ class bookingController extends Controller
     {
         $rm = Room::all();
         // return view('dashboard',['rm'=>$rm]);
-        return redirect('/detail/3');
+        return redirect('/detail/1');
     }
 
     public function detail(Request $request , $id)
