@@ -25,6 +25,17 @@
             </div>
 
             <div class="mt-4">
+                <x-jet-label for="kelas" value="{{ __('Kelas') }}" />
+                <select name="kelas" class="block mt-1 w-full form-control" id="kelas" required>
+                    
+                    <option value="XRPL1">XRPL1</option>
+                    <option value="XRPL2">XRPL2</option>
+                    
+
+                </select>
+            </div>
+
+            <div class="mt-4">
                 <x-jet-label for="password" value="{{ __('Password') }}" />
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>

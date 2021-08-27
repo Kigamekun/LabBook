@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->integer('token')->default(3);
             $table->integer('role')->default(0);
             $table->string('nis')->nullable();
+            $table->string('kelas');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

@@ -29,6 +29,7 @@
                                     <tr>
                                         <th scope="col">name</th>
                                         <th scope="col">email</th>
+                                        <th scope="col">kelas</th>
                                     
                                     </tr>
                                 </thead>
@@ -39,6 +40,7 @@
                                         <tr>
                                             <td>{{ App\Models\User::where('id',$item->user_id)->pluck('name')->first()}}</td>
                                             <td>{{ App\Models\User::where('id',$item->user_id)->pluck('email')->first()}}</td>
+                                            <td>{{ App\Models\User::where('id',$item->user_id)->pluck('kelas')->first()}}</td>
 
                                         </tr>
                                     @endforeach
