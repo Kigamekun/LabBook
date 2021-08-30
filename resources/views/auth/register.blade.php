@@ -21,8 +21,14 @@
 
             <div class="mt-4">
                 <x-jet-label for="nis" value="{{ __('NIS') }}" />
-                <x-jet-input id="nis" class="block mt-1 w-full" type="text" name="nis" :value="old('nis')" required />
+                <x-jet-input id="nis" class="block mt-1 w-full" type="number" name="nis" :value="old('nis')" required />
             </div>
+            <!-- <div class="mt-4">
+                <label class="block font-medium text-sm text-gray-700" for="nis">
+                 NIS
+                </label>
+                <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block mt-1 w-full" id="nis" type="number" name="nis" required="">
+            </div> -->
 
             <div class="mt-4">
                 <x-jet-label for="kelas" value="{{ __('Kelas') }}" />

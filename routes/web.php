@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [bookingController::class,'index'])->name('dashboard');
 
-Route::middleware(['auth:sanctum','verified'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('detail/{id}', [bookingController::class,'detail'])->name('detail');
     Route::get('booking/{id}/{tgl}', [bookingController::class,'booking'])->name('booking');
     Route::post('bookingPost/', [bookingController::class,'bookingPost'])->name('bookingPost');

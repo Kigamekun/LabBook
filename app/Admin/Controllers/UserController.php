@@ -69,7 +69,7 @@ class UserController extends AdminController
         $show->field('two_factor_recovery_codes', __('Two factor recovery codes'));
         $show->field('remember_token', __('Remember token'));
         $show->field('current_team_id', __('Current team id'));
-        $show->field('profile_photo_path', __('Profile photo path'));
+        $show->field('profile_photo_path', __('Profile photo path'))->image();
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
