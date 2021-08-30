@@ -53,13 +53,11 @@ class bookingController extends Controller
     public function bookingPost(Request $request)
     {
 
-        $users = DB::table('users')
-                ->where('id', '=', Auth::id())->first();
-                // dd($users);
+       
         booking::create([
-            'name'=>$users->name,
-            'nis'=>$users->nis,
-            'kelas'=>$users->kelas,
+            'name'=>Auth::user()->name,
+            'nis'=>Auth::user()->nis,
+            'kelas'=>Auth::user()->kelas,
             'user_id'=>Auth::id(),
             'tanggal'=>date_create($request->tanggal),
             'room_id'=>$request->id
