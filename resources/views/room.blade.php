@@ -62,7 +62,7 @@
                                         </td>
 
 
-                                            @elseif ($v == $rm->limit)
+                                            @elseif ($v >= $rm->limit)
                                         <td><button type="button" class="btn btn-warning" disabled>Full </button>
                                         </td>
                                     @else
@@ -82,7 +82,7 @@
                                     <td>
                                     @if(date('D', strtotime( $y . '-' . $m . '-' . $i)) == "Sun" || date('D', strtotime( $y . '-' . $m . '-' . $i)) == "Sat")
                                     <span class="badge badge-danger">Tidak tersedia</span></td>
-                                                @elseif ($v == $rm->limit)
+                                                @elseif ($v >= $rm->limit)
                                                     <span class="badge badge-danger">Full</span></td>
 
                                         @else
@@ -120,7 +120,7 @@
                                     @if(date('D', strtotime( $thn . '-' . $bln . '-' . $i)) == "Sun" || date('D', strtotime( $thn . '-' . $bln . '-' . $i)) == "Sat")
                                     <td><button type="button" class="btn btn-danger" disabled>Tidak tersedia </button>
                                 </td>
-                            @elseif ($v == $rm->limit)
+                            @elseif ($v >= $rm->limit)
                                 <td><button type="button" class="btn btn-warning" disabled>Full </button>
                                 </td>
                             @else
@@ -139,7 +139,7 @@
                             <span class="badge badge-danger">Tidak tersedia</span>
                                     </td>
                             
-                            @elseif ($v == $rm->limit)
+                            @elseif ($v >= $rm->limit)
                                             <span class="badge badge-danger">Full</span>
                                     </td>
 
