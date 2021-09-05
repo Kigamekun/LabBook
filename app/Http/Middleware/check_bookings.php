@@ -17,7 +17,7 @@ class check_bookings
      */
     public function handle(Request $request, Closure $next)
     {
-        $newDate = date("d-m-Y", strtotime($request->tanggal));
+        $newDate = date("Y-m-d", strtotime($request->tanggal));
         if (is_null(Booking::where(['user_id'=>Auth::id(),'tanggal'=>$newDate,'room_id'=>$request->id])->first())) {
             # code...
             return $next($request);
