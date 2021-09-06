@@ -25,7 +25,7 @@ class RoomController extends AdminController
     protected function table()
     {
         $table = new Table(new Room());
-
+        $table->model()->orderBy('id','desc');
         $table->column('id', __('Id'));
         $table->column('name', __('Name'));
         $table->column('limit', __('Limit'));

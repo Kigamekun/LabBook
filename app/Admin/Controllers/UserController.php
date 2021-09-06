@@ -25,7 +25,7 @@ class UserController extends AdminController
     protected function table()
     {
         $table = new Table(new User());
-
+        $table->model()->orderBy('id','desc');
         $table->column('id', __('Id'));
         $table->column('name', __('Name'));
         $table->column('token', __('Token'));
@@ -91,12 +91,12 @@ class UserController extends AdminController
         $form->text('nis', __('Nis'));
         $form->text('kelas', __('Kelas'));
         $form->email('email', __('Email'));
-        $form->datetime('email_verified_at', __('Email verified at'))->default(date('Y-m-d H:i:s'));
-        $form->password('password', __('Password'));
-        $form->textarea('two_factor_secret', __('Two factor secret'));
-        $form->textarea('two_factor_recovery_codes', __('Two factor recovery codes'));
-        $form->text('remember_token', __('Remember token'));
-        $form->number('current_team_id', __('Current team id'));
+        // $form->datetime('email_verified_at', __('Email verified at'))->default(date('Y-m-d H:i:s'));
+        // $form->password('password', __('Password'));
+        // $form->textarea('two_factor_secret', __('Two factor secret'));
+        // $form->textarea('two_factor_recovery_codes', __('Two factor recovery codes'));
+        // $form->text('remember_token', __('Remember token'));
+        // $form->number('current_team_id', __('Current team id'));
         $form->text('profile_photo_path', __('Profile photo path'));
 
         return $form;

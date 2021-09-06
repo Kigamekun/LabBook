@@ -25,7 +25,7 @@ class BookingController extends AdminController
     protected function table()
     {
         $table = new Table(new Booking());
-
+        $table->model()->orderBy('id','desc');
         // $table->column('id', __('Id'));
         $table->column('name', __('Name'));
         $table->column('nis', __('Nis'));
